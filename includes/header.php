@@ -30,12 +30,12 @@
    </div>
    <!-- Spinner End -->
 
-
+   <?php $activePage = basename($_SERVER['PHP_SELF'], ".php"); ?>
    <!-- Navbar start -->
    <div class="container-fluid nav-bar">
       <div class="container">
          <nav class="navbar navbar-light navbar-expand-lg py-4">
-            <a href="index.html" class="navbar-brand">
+            <a href="index.php" class="navbar-brand">
                <h1 class="text-primary fw-bold mb-0">Cater<span class="text-dark">Serv</span> </h1>
             </a>
             <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -43,22 +43,23 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                <div class="navbar-nav mx-auto">
-                  <a href="index.html" class="nav-item nav-link active">Home</a>
-                  <a href="about.html" class="nav-item nav-link">About</a>
-                  <a href="service.html" class="nav-item nav-link">Services</a>
-                  <a href="event.html" class="nav-item nav-link">Events</a>
-                  <a href="menu.html" class="nav-item nav-link">Menu</a>
-                  <div class="nav-item dropdown">
+                  <a href="index.php" class="nav-item nav-link <?= ($activePage == 'index') ? 'active' : ''; ?>">Home</a>
+                  <a href="about.php" class="nav-item nav-link <?= ($activePage == 'about') ? 'active' : ''; ?>">About</a>
+                  <a href="service.php" class="nav-item nav-link <?= ($activePage == 'service') ? 'active' : ''; ?>">Services</a>
+                  <a href="event.php" class="nav-item nav-link <?= ($activePage == 'event') ? 'active' : ''; ?>">Events</a>
+                  <a href="menu.php" class="nav-item nav-link <?= ($activePage == 'menu') ? 'active' : ''; ?>">Menu</a>
+                  <a href="book.php" class="nav-item nav-link <?= ($activePage == 'book') ? 'active' : ''; ?>">Booking</a>
+                  <a href="blog.php" class="nav-item nav-link <?= ($activePage == 'blog') ? 'active' : ''; ?>">Our Blog</a>
+                  <a href="team.php" class="nav-item nav-link <?= ($activePage == 'team') ? 'active' : ''; ?>">Our Team</a>
+                  <a href="testimonial.php" class="nav-item nav-link <?= ($activePage == 'testimonial') ? 'active' : ''; ?>">Testimonial</a>
+                  <!-- <div class="nav-item dropdown">
                      <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                      <div class="dropdown-menu bg-light">
-                        <a href="book.html" class="dropdown-item">Booking</a>
-                        <a href="blog.html" class="dropdown-item">Our Blog</a>
-                        <a href="team.html" class="dropdown-item">Our Team</a>
-                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                        <a href="404.html" class="dropdown-item">404 Page</a>
+                        
+                        <a href="404.php" class="dropdown-item">404 Page</a>
                      </div>
-                  </div>
-                  <a href="contact.html" class="nav-item nav-link">Contact</a>
+                  </div> -->
+                  <a href="contact.php" class="nav-item nav-link <?= ($activePage == 'contact') ? 'active' : ''; ?>">Contact</a>
                </div>
                <a href="" class="btn btn-primary py-2 px-4 d-none d-xl-inline-block rounded-pill">Book Now</a>
             </div>

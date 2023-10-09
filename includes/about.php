@@ -25,7 +25,7 @@
                         <i class="fas fa-share text-primary me-2"></i>Delicious Deals for Delicious Meals
                     </div>
                 </div>
-                <a href="" class="btn btn-primary py-3 px-5 rounded-pill">About Us<i class="fas fa-arrow-right ps-2"></i></a>
+                <a href="about.php" class="btn btn-primary py-3 px-5 rounded-pill">About Us<i class="fas fa-arrow-right ps-2"></i></a>
             </div>
         </div>
     </div>
