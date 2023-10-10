@@ -62,21 +62,29 @@ getSidebar();
                         <div class="row mb-3">
                             <label class="col-sm-3 col-form-label col_form_label">Designation<span class="req_star">*</span>:</label>
                             <div class="col-sm-7">
-                                <input type="text" class="form-control form_control" id="" name="username">
+                                <input type="text" class="form-control form_control" id="" name="designation">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label class="col-sm-3 col-form-label col_form_label">Address<span class="req_star">*</span>:</label>
                             <div class="col-sm-7">
-                                <!-- <input type="address"  id="" name="username"> -->
-                                <textarea name="" id="" class="form-control form_control" cols="10" rows="2"></textarea>
+                                <textarea name="address" id="" class="form-control form_control" cols="10" rows="2"></textarea>
                             </div>
-                            
+
                         </div>
                         <div class="row mb-3">
                             <label class="col-sm-3 col-form-label col_form_label">User Role<span class="req_star">*</span>:</label>
                             <div class="col-sm-7">
                                 <select class="form-control form_control" id="" name="role">
+                                    <option>Select Role</option>
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label class="col-sm-3 col-form-label col_form_label">User Status<span class="req_star">*</span>:</label>
+                            <div class="col-sm-7">
+                                <select class="form-control form_control" id="" name="status">
                                     <option>Select Role</option>
 
                                 </select>
