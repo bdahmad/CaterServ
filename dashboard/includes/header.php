@@ -8,9 +8,6 @@
    <meta content="" name="keywords">
    <meta content="" name="description">
 
-   <!-- Favicon -->
-   <!-- <link href="img/favicon.ico" rel="icon"> -->
-
    <!-- Google Web Fonts -->
    <link href="css/googleApisSwap.css" rel="stylesheet">
 

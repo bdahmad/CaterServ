@@ -1,7 +1,18 @@
 <?php
 require_once('functions/function.php');
+include_once('../class/User.php');
+include_once('../class/Status.php');
+
 getHeader();
 getSidebar();
+include_once('../class/Role.php');
+$objRole = new Role();
+$objUser = new User();
+$objStatus = new Status();
+
+
+
+
 ?>
 
 <!-- Content Start -->
@@ -23,6 +34,11 @@ getSidebar();
                         </div>
                     </div>
                     <div class="card-body">
+                        <?php
+                        if (isset($_POST['add-user'])) {
+                            echo $objUser->addUser($_POST);
+                        }
+                        ?>
                         <div class="row mb-3">
                             <label class="col-sm-3 col-form-label col_form_label">Name<span class="req_star">*</span>:</label>
                             <div class="col-sm-7">
@@ -77,6 +93,15 @@ getSidebar();
                             <div class="col-sm-7">
                                 <select class="form-control form_control" id="" name="role">
                                     <option>Select Role</option>
+                                    <?php
+                                    $data = $objRole->showData();
+
+                                    while ($row = mysqli_fetch_assoc($data)) {
+                                    ?>
+                                        <option value="<?= $row['role_id']; ?>"><?= $row['role_name']; ?></option>
+                                    <?php
+                                    }
+                                    ?>
 
                                 </select>
                             </div>
@@ -85,8 +110,16 @@ getSidebar();
                             <label class="col-sm-3 col-form-label col_form_label">User Status<span class="req_star">*</span>:</label>
                             <div class="col-sm-7">
                                 <select class="form-control form_control" id="" name="status">
-                                    <option>Select Role</option>
+                                    <option>Select Status</option>
+                                    <?php
+                                    $data = $objStatus->showData();
 
+                                    while ($row = mysqli_fetch_assoc($data)) {
+                                    ?>
+                                        <option value="<?= $row['status_id']; ?>"><?= $row['status_name']; ?></option>
+                                    <?php
+                                    }
+                                    ?>
                                 </select>
                             </div>
                         </div>
@@ -98,7 +131,7 @@ getSidebar();
                         </div>
                     </div>
                     <div class="card-footer text-center">
-                        <button type="submit" class="btn btn-sm btn-dark">REGISTRATION</button>
+                        <button type="submit" class="btn btn-sm btn-dark" name="add-user">REGISTRATION</button>
                     </div>
                 </div>
             </form>
