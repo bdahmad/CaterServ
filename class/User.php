@@ -64,9 +64,13 @@ class User extends Config
       }
    }
 
-   public function viewUser()
+   public function viewAllUser()
    {
-      $sql = "SELECT * FROM `tbl_users` NATURAL JOIN `tbl_role`NATURAL JOIN `tbl_status`;";
+      $sql = "SELECT * FROM `tbl_users` NATURAL JOIN `tbl_role`NATURAL JOIN `tbl_status`";
+      return mysqli_query($this->con, $sql);
+   }
+   public function viewUser($getViewId){
+      $sql = "SELECT * FROM `tbl_users` NATURAL JOIN `tbl_role`NATURAL JOIN `tbl_status` WHERE user_id = '$getViewId' ";
       return mysqli_query($this->con, $sql);
    }
 }

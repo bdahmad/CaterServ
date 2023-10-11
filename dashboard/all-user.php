@@ -39,7 +39,7 @@ getSidebar();
             <tbody>
               <?php
               $objUser = new User();
-              $query = $objUser->viewUser();
+              $query = $objUser->viewAllUser();
               while ($data = mysqli_fetch_assoc($query)) {
 
               ?>

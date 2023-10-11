@@ -3,9 +3,13 @@ require_once('functions/function.php');
 include_once('../class/User.php');
 getHeader();
 getSidebar();
+$id = $_GET['v'];
 $objUser = new User();
-$query = $objUser->viewUser();
+$query = $objUser->viewUser($id);
 $data = mysqli_fetch_assoc($query);
+
+
+
 ?>
 <!-- Content Start -->
 <div class="content">
@@ -13,7 +17,7 @@ $data = mysqli_fetch_assoc($query);
 
   <div class="row">
     <div class="col-md-12">
-      <div class="card mb-3">
+      <div class="card mb-3 mt-5">
         <div class="card-header">
           <div class="row">
             <div class="col-md-8 card_title_part">
