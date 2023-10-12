@@ -71,8 +71,30 @@ getSidebar();
                         <li><a class="dropdown-item" href="view-user.php?v=<?= $data['user_id']; ?>">View</a></li>
                         <li><a class="dropdown-item" href="edit-user.php?e=<?= $data['user_id']; ?>">Edit</a></li>
                         <li><a class="dropdown-item" href="change-password.php?p=<?= $data['user_id']; ?>">Change Password</a></li>
-                        <li><a class="dropdown-item" href="delete-user.php?d=<?= $data['user_id']; ?>">Delete</a></li>
+                        <!-- <li><a class="dropdown-item" href="delete-user.php?d=<?= $data['user_id']; ?>">Delete</a></li> -->
+                        <li><button type="button" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#delete<?=$data['user_id'];?>">Delete</button></li>
                       </ul>
+                    </div>
+                    <!-- Button trigger modal -->
+                    
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="delete<?=$data['user_id'];?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Delete Message</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            Are you sure to delete?
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                            <a  type="button" class="btn btn-primary" href="delete-user.php?d=<?= $data['user_id']; ?>">Yes</a>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </td>
                 </tr>

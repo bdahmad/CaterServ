@@ -125,8 +125,11 @@ $objStatus = new Status();
                         </div>
                         <div class="row mb-3">
                             <label class="col-sm-3 col-form-label col_form_label">Photo:</label>
-                            <div class="col-sm-7">
-                                <input type="file" class="form-control form_control" id="" name="photo">
+                            <div class="col-sm-4">
+                                <input type="file" onchange="loadFile()" class="form-control form_control" id="" name="photo">
+                            </div>
+                            <div class="col-sm-2">
+                                <img class="img200" id="output"  alt="">
                             </div>
                         </div>
                     </div>
@@ -141,3 +144,13 @@ $objStatus = new Status();
 
 
     <?php getFooter(); ?>
+
+    <script>
+        var loadFile = function() {
+            var output = document.getElementById('output');
+            output.src = URL.createObjectURL(event.target.files[0]);
+            output.onload = function() {
+                URL.revokeObjectURL(output.src) // free memory
+            }
+        };
+    </script>

@@ -34,6 +34,11 @@ $dat = mysqli_fetch_assoc($query);
                         </div>
                     </div>
                     <div class="card-body">
+                    <?php
+                        if (isset($_POST['update-user'])) {
+                            echo $objUser->updateUser($_POST,$id);
+                        }
+                        ?>
                         <div class="row mb-3">
                             <label class="col-sm-3 col-form-label col_form_label">Name<span class="req_star">*</span>:</label>
                             <div class="col-sm-7">
@@ -49,7 +54,7 @@ $dat = mysqli_fetch_assoc($query);
                         <div class="row mb-3">
                             <label class="col-sm-3 col-form-label col_form_label">Phone:</label>
                             <div class="col-sm-7">
-                                <input type="text" class="form-control form_control" id="" name="phone" value="<?= $dat['user_phone']; ?>">
+                                <input type="number" class="form-control form_control" id="" name="phone" value="<?= $dat['user_phone']; ?>">
                             </div>
                         </div>
                         <div class="row mb-3">
@@ -61,18 +66,18 @@ $dat = mysqli_fetch_assoc($query);
                         <div class="row mb-3">
                             <label class="col-sm-3 col-form-label col_form_label">Designation<span class="req_star">*</span>:</label>
                             <div class="col-sm-7">
-                                <input type="text" class="form-control form_control" value="<?= $dat['user_designation']; ?>" id="" name="">
+                                <input type="text" class="form-control form_control" value="<?= $dat['user_designation']; ?>" id="" name="designation">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label class="col-sm-3 col-form-label col_form_label">Address<span class="req_star">*</span>:</label>
                             <div class="col-sm-7">
-                                <input type="text" class="form-control form_control" value="<?= $dat['user_address']; ?>" id="" name="">
+                                <input type="text" class="form-control form_control" value="<?= $dat['user_address']; ?>" id="" name="address">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label class="col-sm-3 col-form-label col_form_label">User Role<span class="req_star">*</span>:</label>
-                            <div class="col-sm-4">
+                            <div class="col-sm-7">
                                 <select class="form-control form_control" id="" name=" role">
                                     <option>Select Role</option>
                                     <?php
@@ -93,7 +98,7 @@ $dat = mysqli_fetch_assoc($query);
                         </div>
                         <div class="row mb-3">
                             <label class="col-sm-3 col-form-label col_form_label">User Status<span class="req_star">*</span>:</label>
-                            <div class="col-sm-4">
+                            <div class="col-sm-7">
                                 <select class="form-control form_control" id="" name="status">
 
                                     <option>Select Status</option>
@@ -117,16 +122,27 @@ $dat = mysqli_fetch_assoc($query);
                         <div class="row mb-3">
                             <label class="col-sm-3 col-form-label col_form_label">Photo:</label>
                             <div class="col-sm-4">
-                                <input type="file" class="form-control form_control" id="" name="photo">
+                                <input type="file" onchange="loadFile()" class="form-control form_control" id="photo" name="photo">
                             </div>
                             <div class="col-sm-2">
-                                <img class="img200" src="uploads/<?= $dat['user_photo']; ?>" alt="">
+                                <?php
+                                if ($dat['user_photo'] != '') {
+                                ?>
+                                    <img class="img200" id="output"  src="uploads/<?= $dat['user_photo']; ?>" alt="user">
+                                <?php
+                                } else {
+                                ?>
+                                    <img class="img200" id="output"  src="images/avatar.png" alt="" />
+                                <?php
+                                }
+                                ?>
+                                <!-- <img class="img200" id="output" src="uploads/<?= $dat['user_photo']; ?>" alt=""> -->
                             </div>
                         </div>
 
                     </div>
                     <div class="card-footer text-center">
-                        <button type="submit" class="btn btn-sm btn-dark">UPDATE</button>
+                        <button type="submit" name="update-user" class="btn btn-sm btn-dark">UPDATE</button>
                     </div>
                 </div>
             </form>
@@ -136,3 +152,14 @@ $dat = mysqli_fetch_assoc($query);
 
 
     <?php getFooter(); ?>
+
+
+    <script>
+        var loadFile = function() {
+            var output = document.getElementById('output');
+            output.src = URL.createObjectURL(event.target.files[0]);
+            output.onload = function() {
+                URL.revokeObjectURL(output.src) // free memory
+            }
+        };
+    </script>

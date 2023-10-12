@@ -14,9 +14,10 @@
             <span>Admin</span>
          </div>
       </div>
+      <?php $activePage = basename($_SERVER['PHP_SELF'],".php")?>
       <div class="navbar-nav w-100">
-         <a href="index.php" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-         <a href="all-user.php" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Users</a>
+         <a href="index.php" class="nav-item nav-link <?= ($activePage == "index") ? 'active': '' ;?>"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+         <a href="all-user.php" class="nav-item nav-link <?= ($activePage == "all-user") ? 'active': '' ;?>"><i class="fa fa-tachometer-alt me-2"></i>Users</a>
          <div class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>
             <div class="dropdown-menu bg-transparent border-0">
