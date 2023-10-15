@@ -19,6 +19,7 @@
          <a href="index.php" class="nav-item nav-link <?= ($activePage == "index") ? 'active' : ''; ?>"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
          <a href="all-user.php" class="nav-item nav-link <?= ($activePage == "all-user") ? 'active' : ''; ?>"><i class="fa fa-tachometer-alt me-2"></i>Users</a>
          <a href="all-team.php" class="nav-item nav-link <?= ($activePage == "all-team") ? 'active' : ''; ?>"><i class="fa fa-tachometer-alt me-2"></i>Team</a>
+         <a href="all-services.php" class="nav-item nav-link <?= ($activePage == "all-services") ? 'active' : ''; ?>"><i class="fa fa-tachometer-alt me-2"></i>Services</a>
          <a href="edit-about.php" class="nav-item nav-link <?= ($activePage == "edit-about") ? 'active' : ''; ?>"><i class="fa fa-tachometer-alt me-2"></i>About</a>
          <a href="edit-achievement.php" class="nav-item nav-link <?= ($activePage == "edit-achievement") ? 'active' : ''; ?>"><i class="fa fa-tachometer-alt me-2"></i>Achievement</a>
          <div class="nav-item dropdown">
