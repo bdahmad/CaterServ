@@ -22,7 +22,7 @@ $dat = mysqli_fetch_assoc($query)
             <ul class="nav nav-pills d-inline-flex justify-content-center mb-5 wow bounceInUp" data-wow-delay="0.1s">
                 <?php while ($data = mysqli_fetch_assoc($query)) { ?>
                     <li class="nav-item p-2">
-                        <a class="d-flex mx-2 py-2 border border-primary bg-light rounded-pill <?= ($data['event_cate_id'] === '1') ? 'active' : ''; ?>" data-bs-toggle="pill" href="#<?= $data['event_cate_slug']; ?>">
+                        <a class="d-flex mx-2 py-2 border border-primary bg-light rounded-pill active" data-bs-toggle="pill" href="#<?= $data['event_cate_slug']; ?>">
                             <span class="text-dark" style="width: 150px;"><?= $data['event_cate_name']; ?></span>
                         </a>
                     </li>
