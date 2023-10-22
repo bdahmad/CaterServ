@@ -35,7 +35,7 @@ $queryEvent = $objEvent->view();
                     } else {
                     ?>
                         <li class="nav-item p-2">
-                            <a class="d-flex mx-2 py-2 border border-primary bg-light rounded-pill" data-bs-toggle="pill" href="#tab-<?= $data['event_cate_slug']; ?>">
+                            <a class="d-flex mx-2 py-2 border border-primary bg-light rounded-pill" data-bs-toggle="pill" href="#tab_<?= $data['event_cate_id']; ?>">
                                 <span class="text-dark" style="width: 150px;"><?= $data['event_cate_name']; ?></span>
                             </a>
                         </li>
@@ -60,7 +60,7 @@ $queryEvent = $objEvent->view();
                                                 <img class="img-fluid rounded w-100" src="dashboard/uploads/<?= $dataEV['event_image']; ?>" alt="">
                                                 <div class="event-overlay d-flex flex-column p-4">
                                                     <h4 class="me-auto"><?= $dataEV['event_cate_name']; ?></h4>
-                                                    <a href="dashboard/uploads/<?= $dataEV['event_image']; ?>" data-lightbox="event-1" class="my-auto"><i class="fas fa-search-plus text-dark fa-2x"></i></a>
+                                                    <a href="dashboard/uploads/<?= $dataEV['event_image']; ?>" data-lightbox="tab_<?= $dataEV['event_cate_id']; ?>" class="my-auto"><i class="fas fa-search-plus text-dark fa-2x"></i></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -73,10 +73,10 @@ $queryEvent = $objEvent->view();
                     <?php
                     } else {
                     ?>
-                        <div id="tab-<?= $data['event_cate_slug']; ?>" class="tab-pane fade show p-0">
+                        <div id="tab_<?= $data['event_cate_id']; ?>" class="tab-pane fade show p-0">
                             <!-- <div class="row g-4"> -->
-                                <div class="col-lg-12">
-                                    <div class="row g-4">
+                            <div class="col-lg-12">
+                                <div class="row g-4">
                                     <?php
                                     while ($dataEV = mysqli_fetch_assoc($queryEvent)) { ?>
                                         <div class="col-md-6 col-lg-3">
@@ -84,12 +84,12 @@ $queryEvent = $objEvent->view();
                                                 <img class="img-fluid rounded w-100" src="dashboard/uploads/<?= $dataEV['event_image']; ?>" alt="">
                                                 <div class="event-overlay d-flex flex-column p-4">
                                                     <h4 class="me-auto">Wedding</h4>
-                                                    <a href="dashboard/uploads/<?= $dataEV['event_image']; ?>" data-lightbox="event-8" class="my-auto"><i class="fas fa-search-plus text-dark fa-2x"></i></a>
+                                                    <a href="dashboard/uploads/<?= $dataEV['event_image']; ?>" data-lightbox="tab_<?= $dataEV['event_cate_id']; ?>" class="my-auto"><i class="fas fa-search-plus text-dark fa-2x"></i></a>
                                                 </div>
                                             </div>
                                         </div>
-                                        <?php } ?>
-                                        <!-- <div class="col-md-6 col-lg-3">
+                                    <?php } ?>
+                                    <!-- <div class="col-md-6 col-lg-3">
                                             <div class="event-img position-relative">
                                                 <img class="img-fluid rounded w-100" src="img/event-2.jpg" alt="">
                                                 <div class="event-overlay d-flex flex-column p-4">
@@ -98,8 +98,8 @@ $queryEvent = $objEvent->view();
                                                 </div>
                                             </div>
                                         </div> -->
-                                    </div>
                                 </div>
+                            </div>
                             <!-- </div> -->
                         </div>
                 <?php

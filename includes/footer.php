@@ -1,4 +1,11 @@
-       <!-- Footer Start -->
+<?php
+include_once('class/SocialGalary.php');
+
+$objSocialGalary = new SocialGalary();
+$querySocialGalary = $objSocialGalary->view();
+
+?>  
+      <!-- Footer Start -->
        <div class="container-fluid footer py-6 my-6 mb-0 bg-light wow bounceInUp" data-wow-delay="0.1s">
           <div class="container">
              <div class="row">
@@ -40,10 +47,14 @@
                    <div class="footer-item">
                       <h4 class="mb-4">Social Gallery</h4>
                       <div class="row g-2">
+                        <?php
+                           while($dataGalary = mysqli_fetch_assoc($querySocialGalary)){
+                        ?>
                          <div class="col-4">
-                            <img src="img/menu-01.jpg" class="img-fluid rounded-circle border border-primary p-2" alt="">
+                            <img src="dashboard/uploads/<?= $dataGalary['socio_galary_image'] ;?>" class="img-fluid rounded-circle border border-primary p-2" alt="">
                          </div>
-                         <div class="col-4">
+                         <?php } ?>
+                         <!-- <div class="col-4">
                             <img src="img/menu-02.jpg" class="img-fluid rounded-circle border border-primary p-2" alt="">
                          </div>
                          <div class="col-4">
@@ -57,7 +68,7 @@
                          </div>
                          <div class="col-4">
                             <img src="img/menu-06.jpg" class="img-fluid rounded-circle border border-primary p-2" alt="">
-                         </div>
+                         </div> -->
                       </div>
                    </div>
                 </div>
