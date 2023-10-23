@@ -1,3 +1,17 @@
+<?php
+include_once('class/Country.php');
+include_once('class/Place.php');
+include_once('class/City.php');
+
+$objPlace = new Place();
+$objCountry = new Country();
+$objCity = new City();
+$queryPlace = $objPlace->view();
+$queryCountry = $objCountry->view();
+$queryCity = $objCity->view();
+
+
+?>
 <!-- Book Us Start -->
 <div class="container-fluid contact py-6 wow bounceInUp" data-wow-delay="0.1s">
     <div class="container">
@@ -16,25 +30,40 @@
                             <div class="col-lg-4 col-md-6">
                                 <select class="form-select border-primary p-2" name="booking_country" aria-label="Default select example">
                                     <option selected>Select Country</option>
-                                    <option value="1">USA</option>
-                                    <option value="2">UK</option>
-                                    <option value="3">India</option>
+                                    <?php
+
+                                    while ($data = mysqli_fetch_assoc($queryCountry)) {
+                                    ?>
+                                        <option value="<?= $data['country_id']; ?>"><?= $data['country_name']; ?></option>
+                                    <?php
+                                    }
+                                    ?>
                                 </select>
                             </div>
                             <div class="col-lg-4 col-md-6">
                                 <select class="form-select border-primary p-2" name="booking_city" aria-label="Default select example">
                                     <option selected>Select City</option>
-                                    <option value="1">Depend On Country</option>
-                                    <option value="2">UK</option>
-                                    <option value="3">India</option>
+                                    <?php
+
+                                    while ($row = mysqli_fetch_assoc($queryCity)) {
+                                    ?>
+                                        <option value="<?= $row['city_id']; ?>"><?= $row['city_name']; ?></option>
+                                    <?php
+                                    }
+                                    ?>
                                 </select>
                             </div>
                             <div class="col-lg-4 col-md-6">
                                 <select class="form-select border-primary p-2" name="booking_place" aria-label="Default select example">
                                     <option selected>Select Place</option>
-                                    <option value="1">Depend On City</option>
-                                    <option value="2">UK</option>
-                                    <option value="3">India</option>
+                                    <?php
+
+                                    while ($row = mysqli_fetch_assoc($queryPlace)) {
+                                    ?>
+                                        <option value="<?= $row['place_id']; ?>"><?= $row['place_name']; ?></option>
+                                    <?php
+                                    }
+                                    ?>
                                 </select>
                             </div>
                             <div class="col-lg-4 col-md-6">

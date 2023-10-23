@@ -24,10 +24,10 @@ $objEvent = new Event();
                     <div class="card-header">
                         <div class="row">
                             <div class="col-md-8 card_title_part">
-                                <i class="fab fa-gg-circle"></i>add event
+                                <i class="fab fa-gg-circle"></i>add booking
                             </div>
                             <div class="col-md-4 card_button_part">
-                                <a href="all-event.php" class="btn btn-sm btn-dark"><i class="fas fa-th"></i>All event</a>
+                                <a href="all-booking.php" class="btn btn-sm btn-dark"><i class="fas fa-th"></i>All booking</a>
                             </div>
                         </div>
                     </div>
@@ -60,7 +60,7 @@ $objEvent = new Event();
                                 <input type="file" onchange="loadFile()" class="form-control form_control" id="" name="event_image">
                             </div>
                             <div class="col-sm-2">
-                                <img class="img200" id="output"  alt="">
+                                <img class="img200" id="output" alt="">
                             </div>
                         </div>
                     </div>

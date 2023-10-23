@@ -15,10 +15,10 @@ getSidebar();
         <div class="card-header">
           <div class="row">
             <div class="col-md-8 card_title_part">
-              <i class="fab fa-gg-circle"></i> All Event Information
+              <i class="fab fa-gg-circle"></i> All booking Information
             </div>
             <div class="col-md-4 card_button_part">
-              <a href="add-event.php" class="btn btn-sm btn-dark"><i class="fas fa-plus-circle"></i>Add Event</a>
+              <a href="add-booking.php" class="btn btn-sm btn-dark"><i class="fas fa-plus-circle"></i>Add booking</a>
             </div>
           </div>
         </div>
