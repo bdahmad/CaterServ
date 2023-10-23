@@ -25,9 +25,18 @@
          <a href="all-social-galary.php" class="nav-item nav-link <?= ($activePage == "all-social-galary") ? 'active' : ''; ?>"><i class="fa fa-tachometer-alt me-2"></i>Social Gallery</a>
          <div class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle <?= ($activePage == "all-event-category") || ($activePage == "all-event") ? 'active' : ''; ?>" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Event</a>
-            <div class="dropdown-menu bg-transparent border-0">
-               <a href="all-event-category.php" class="dropdown-item ">Category</a>
-               <a href="all-event.php" class="dropdown-item ">Events</a>
+            <div class="dropdown-menu bg-transparent border-0 mx-5">
+               <a href="all-event-category.php" class="dropdown-item mb-1 <?= ($activePage == "all-event-category") ? 'active' : ''; ?>"><i class="fa fa-laptop me-2"></i> Category</a>
+               <a href="all-event.php" class="dropdown-item <?= ($activePage == "all-event") ? 'active' : ''; ?>"><i class="fa fa-laptop me-2"></i> Events</a>
+            </div>
+         </div>
+         <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle <?= ($activePage == "all-booking") || ($activePage == "all-country") ? 'active' : ''; ?>" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Booking</a>
+            <div class="dropdown-menu bg-transparent border-0 mx-5">
+               <a href="all-booking.php" class="dropdown-item mb-1 <?= ($activePage == "all-booking") ? 'active' : ''; ?>"><i class="fa fa-laptop me-2"></i> Bookings</a>
+               <a href="all-country.php" class="dropdown-item mb-1 <?= ($activePage == "all-country") ? 'active' : ''; ?>"><i class="fa fa-laptop me-2"></i> Country</a>
+               <a href="all-city.php" class="dropdown-item <?= ($activePage == "all-city") ? 'active' : ''; ?>"><i class="fa fa-laptop me-2"></i> City</a>
+               <a href="all-place.php" class="dropdown-item <?= ($activePage == "all-place") ? 'active' : ''; ?>"><i class="fa fa-laptop me-2"></i> Place</a>
             </div>
          </div>
          <a href="widget.php" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
