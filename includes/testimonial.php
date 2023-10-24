@@ -72,7 +72,7 @@
                     <p class="fs-5 m-0 pt-3">Lorem ipsum dolor sit amet elit, sed do eiusmod tempor ut labore et dolore magna aliqua.</p>
                 </div>
             </div>
-            <div class="testimonial-item rounded bg-light">
+            <!-- <div class="testimonial-item rounded bg-light">
                 <div class="d-flex mb-3">
                     <img src="img/testimonial-4.jpg" class="img-fluid rounded-circle flex-shrink-0" alt="">
                     <div class="position-absolute" style="top: 15px; right: 20px;">
@@ -93,7 +93,7 @@
                     </div>
                     <p class="fs-5 m-0 pt-3">Lorem ipsum dolor sit amet elit, sed do eiusmod tempor ut labore et dolore magna aliqua.</p>
                 </div>
-            </div>
+            </div> -->
         </div>
         <div class="owl-carousel testimonial-carousel testimonial-carousel-2 wow bounceInUp" data-wow-delay="0.3s">
             <div class="testimonial-item rounded bg-light">
