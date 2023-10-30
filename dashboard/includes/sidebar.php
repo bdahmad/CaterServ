@@ -23,6 +23,7 @@
          <a href="edit-about.php" class="nav-item nav-link <?= ($activePage == "edit-about") ? 'active' : ''; ?>"><i class="fa fa-tachometer-alt me-2"></i>About</a>
          <a href="edit-achievement.php" class="nav-item nav-link <?= ($activePage == "edit-achievement") ? 'active' : ''; ?>"><i class="fa fa-tachometer-alt me-2"></i>Achievement</a>
          <a href="all-social-galary.php" class="nav-item nav-link <?= ($activePage == "all-social-galary") ? 'active' : ''; ?>"><i class="fa fa-tachometer-alt me-2"></i>Social Gallery</a>
+         <a href="all-social-media.php" class="nav-item nav-link <?= ($activePage == "all-social-media") ? 'active' : ''; ?>"><i class="fa fa-tachometer-alt me-2"></i>Social Media</a>
          <div class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle <?= ($activePage == "all-event-category") || ($activePage == "all-event") ? 'active' : ''; ?>" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Event</a>
             <div class="dropdown-menu bg-transparent border-0 mx-5">

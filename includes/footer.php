@@ -1,8 +1,11 @@
 <?php
 include_once('class/SocialGalary.php');
+include_once('class/SocialMedia.php');
 
 $objSocialGalary = new SocialGalary();
 $querySocialGalary = $objSocialGalary->view();
+$objSocialMedia = new SocialMedia();
+
 
 ?>
 <!-- Footer Start -->
@@ -14,10 +17,14 @@ $querySocialGalary = $objSocialGalary->view();
                <h1 class="text-primary">Cater<span class="text-dark">Serv</span></h1>
                <p class="lh-lg mb-4">There cursus massa at urnaaculis estieSed aliquamellus vitae ultrs condmentum leo massamollis its estiegittis miristum.</p>
                <div class="footer-icon d-flex">
-                  <a class="btn btn-primary btn-sm-square me-2 rounded-circle" href=""><i class="fab fa-facebook-f"></i></a>
-                  <a class="btn btn-primary btn-sm-square me-2 rounded-circle" href=""><i class="fab fa-twitter"></i></a>
-                  <a href="#" class="btn btn-primary btn-sm-square me-2 rounded-circle"><i class="fab fa-instagram"></i></a>
-                  <a href="#" class="btn btn-primary btn-sm-square rounded-circle"><i class="fab fa-linkedin-in"></i></a>
+                  <?php
+                     $querySocialMedia = $objSocialMedia->view();
+                     $media = mysqli_fetch_assoc($querySocialMedia);
+                  ?>
+                  <a class="btn btn-primary btn-sm-square me-2 rounded-circle" href="<?= $media['social_facebook'] ?>"><i class="fab fa-facebook-f"></i></a>
+                  <a class="btn btn-primary btn-sm-square me-2 rounded-circle" href="<?= $media['social_twitter'] ?>"><i class="fab fa-twitter"></i></a>
+                  <a href="<?= $media['social_instagram'] ?>" class="btn btn-primary btn-sm-square me-2 rounded-circle"><i class="fab fa-instagram"></i></a>
+                  <a href="<?= $media['social_linkedin'] ?>" class="btn btn-primary btn-sm-square rounded-circle"><i class="fab fa-linkedin-in"></i></a>
                </div>
             </div>
          </div>
