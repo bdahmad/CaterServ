@@ -56,7 +56,7 @@ getSidebar();
                   <td><?= $data['socio_galary_status']; ?></td>
                   <td>
                       <a class="btn btn-sm btn-primary" href="view-user.php?v=<?= $data['socio_galary_id']; ?>"><i class="fas fa-eye"></i> </a> 
-                     <a class="btn btn-sm btn-info" href="edit-user.php?e=<?= $data['socio_galary_id']; ?>"><i class="fas fa-edit"></i></a>
+                     <a class="btn btn-sm btn-info" href="edit-social-galary.php?e=<?= $data['socio_galary_id']; ?>"><i class="fas fa-edit"></i></a>
                         <!-- <li><a class="btn btn-sm btn-primary" href="delete-user.php?d=<?= ['user_id']; ?>"><i class="fas fa-trash-alt"></i></a></li> -->
                         <!-- <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#delete<?=['socio_galary_id'];?>">Delete</button> -->
                       
